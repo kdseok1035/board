@@ -1,0 +1,13 @@
+server:
+    port: 8082
+spring:
+  datasource:    
+    jdbc-url: jdbc:oracle:thin:@localhost:1521:XE
+    username: scott
+    password: tiger
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    open-in-view: false
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.example.vuebackboard.dto

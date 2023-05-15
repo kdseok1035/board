@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Board"> 
+	<select id="boardlist" resultType="bdto"> 
+		SELECT * from tblboard order by bseq desc
+	</select> 
+	<select id="boardcontent" resultType="bdto">
+		SELECT * FROM tblboard WHERE bseq = #{bseq} 
+	</select>
+
+	<insert id="boardwrite">
+		insert into tblboard(bseq, btitle, bcontent, bauthor, bdate, bpw) values (bseq.nextval,#{btitle}, #{bcontent}, #{bauthor},default, #{bpw})
+	</insert>
+
+	<update id ="boardedit">
+		update tblboard set btitle=#{btitle}, bcontent = #{bcontent}, bauthor=#{bauthor} where bseq = #{bseq}
+	</update>
+
+	<delete id="boarddelete">
+		delete from tblboard where bseq = #{bseq}
+	</delete>
+
+		<!-- 총 게시글 갯수 출력 -->
+	<select id="boardcount" resultType="int">
+		SELECT COUNT(*) FROM tblBOARD
+	</select>
+
+	<!-- 페이징 처리 후 게시글 조회 -->
+	<select id="boardselect" resultType="bdto">
+		SELECT * 
+			FROM (
+				SELECT ROWNUM RN, A.* 
+					FROM (
+							SELECT * 
+							FROM tblBOARD 
+							ORDER BY bSEQ DESC 
+							) A
+					)
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+
+</mapper>
