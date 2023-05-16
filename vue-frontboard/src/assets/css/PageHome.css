@@ -1,0 +1,33 @@
+#list {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 50%
+}
+
+#list th,
+#list td {
+    border: 1px solid black;
+}
+
+/* #list thead tr th {
+  width: 30%;
+
+} */
+
+.btn-cover {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-cover button {
+    margin: 10px;
+}
+
+.write-button {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+
+}

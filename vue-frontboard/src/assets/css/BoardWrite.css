@@ -1,0 +1,49 @@
+#content {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 60%
+}
+
+#content th,
+#content td {
+    border: 1px solid black;
+}
+
+
+#content th {
+    width: 10%;
+}
+
+#btitle {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+#bcontent {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 90%;
+    height: 300px;
+    resize: none;
+}
+
+#bauthor {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+#bpw {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+.button-save {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+
+}
