@@ -1,4 +1,4 @@
-package com.example.vuebackboard;
+package com.example.vuebackboard.util;
 
 public class PagingVO {
 	

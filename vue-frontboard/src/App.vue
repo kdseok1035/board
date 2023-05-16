@@ -1,16 +1,16 @@
 <template>
-  <PageHeader/>
-  <router-view/>
+    <PageHeader/>
+    <router-view/>
 </template>
 
 <script>
 import PageHeader from '@/components/PageHeader'
 
 export default {
-  name: 'App',
-  components: {
-    PageHeader
-  }
+    name: 'App',
+    components: {
+        PageHeader
+    }
 }
 </script>
 

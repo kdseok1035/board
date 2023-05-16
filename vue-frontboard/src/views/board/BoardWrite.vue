@@ -50,7 +50,7 @@ export default {
 
 
             //INSERT
-            this.$axios.post("http://localhost:8082/boardwrite", this.form)
+            this.$axios.post("http://localhost:8082/boardWrite", this.form)
                 .then(() => {
                     alert('글이 저장되었습니다.')
                     location.href = '/'
