@@ -17,4 +17,14 @@ public class BoardDTO {
     private String bauthor;
     private String bdate;
     private String bpw;
+
+    private String bwriteip;
+    private String bwritedate;
+    private String bwriter;
+
+    private String beditip;
+    private String beditdate;
+    private String bediter;
+
+
 }

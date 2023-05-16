@@ -11,15 +11,18 @@
     </select>
 
     <insert id="boardWrite">
-        insert into tblboard(bseq, btitle, bcontent, bauthor, bdate, bpw)
-        values (bseq.nextval, #{btitle}, #{bcontent}, #{bauthor}, default, #{bpw})
+        insert into tblboard(bseq, btitle, bcontent, bauthor, bdate, bpw, bwriter, bwriteip, bwritedate)
+        values (bseq.nextval, #{btitle}, #{bcontent}, #{bauthor}, default, #{bpw}, #{bwriter}, #{bwriteip}, default)
     </insert>
 
     <update id="boardEdit">
         update tblboard
         set btitle=#{btitle},
             bcontent = #{bcontent},
-            bauthor=#{bauthor}
+            bauthor=#{bauthor},
+            bediter=#{bauthor},
+            beditip=#{beditip},
+            beditdate=sysdate
         where bseq = #{bseq}
     </update>
 

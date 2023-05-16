@@ -41,7 +41,8 @@ public class BoardController {
     @CrossOrigin(origins = "*")
     @PostMapping("/boardWrite")
     public void boardWrite(@RequestBody BoardDTO dto,HttpServletRequest req) {
-        String clientIp = Utils.getIp(req);
+        dto.setBwriter(dto.getBauthor());
+        dto.setBwriteip(Utils.getIp(req));
         service.boardWrite(dto);
     }
 
@@ -54,7 +55,8 @@ public class BoardController {
     @CrossOrigin(origins = "*")
     @PostMapping("/boardEdit")
     public void boardEdit(@RequestBody BoardDTO dto, @RequestParam(name = "bseq") Long bseq, HttpServletRequest req) {
-        String clientIp = Utils.getIp(req);
+        dto.setBediter(dto.getBauthor());
+        dto.setBeditip(Utils.getIp(req));
         service.boardEdit(dto);
     }
 
