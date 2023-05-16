@@ -2,25 +2,29 @@ package com.example.vuebackboard;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.mybatis.spring.SqlSessionTemplate;
 
 import com.example.vuebackboard.dto.BoardDTO;
+import org.springframework.stereotype.Repository;
 
+@Repository
+@Mapper
 public interface BoardDAO {
-    
-    List<BoardDTO> boardlist(SqlSessionTemplate session);
 
-    BoardDTO boardcontent(SqlSessionTemplate session, Long bseq);
+    List<BoardDTO> boardlist();
 
-    void boardwrite(SqlSessionTemplate session, BoardDTO dto);
+    BoardDTO boardcontent(Long bseq);
 
-    void boarddelete(SqlSessionTemplate session, Long bseq);
+    void boardwrite(BoardDTO dto);
 
-    void boardedit(SqlSessionTemplate session, BoardDTO dto);
+    void boarddelete(Long bseq);
 
-    List<BoardDTO> selectBoard(SqlSessionTemplate session, PagingVO vo);
+    void boardedit(BoardDTO dto);
 
-    int countBoard(SqlSessionTemplate session);
+    List<BoardDTO> selectBoard(PagingVO vo);
+
+    int countBoard();
 
 
 }

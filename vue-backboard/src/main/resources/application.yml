@@ -1,6 +1,9 @@
 server:
     port: 8082
 spring:
+  devtools:
+    livereload:
+      enabled: true
   datasource:    
     jdbc-url: jdbc:oracle:thin:@localhost:1521:XE
     username: scott
