@@ -31,3 +31,17 @@
     margin-top: 10px;
 
 }
+#map {
+    margin: 10px auto;
+    width: 60%;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.button-group {
+    margin: 10px 0;
+}
+
+button {
+    margin: 0 3px;
+}

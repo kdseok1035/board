@@ -1,4 +1,5 @@
 <template>
+    <div id="map"></div>
     <div class="board-list">
         <table id="list">
             <thead>

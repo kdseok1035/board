@@ -55,9 +55,11 @@ public class BoardController {
     @CrossOrigin(origins = "*")
     @PostMapping("/boardEdit")
     public void boardEdit(@RequestBody BoardDTO dto, @RequestParam(name = "bseq") Long bseq, HttpServletRequest req) {
-        dto.setBediter(dto.getBauthor());
-        dto.setBeditip(Utils.getIp(req));
+        dto.setBseq(String.valueOf(bseq));
+        dto.setEediter(dto.getBauthor());
+        dto.setEeditip(Utils.getIp(req));
         service.boardEdit(dto);
+        service.boardEditInfo(dto);
     }
 
 

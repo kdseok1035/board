@@ -20,4 +20,5 @@ public interface BoardService {
     List<BoardDTO> selectBoard(PagingVO vo);
 
 
+    void boardEditInfo(BoardDTO dto);
 }

@@ -22,9 +22,9 @@ public class BoardDTO {
     private String bwritedate;
     private String bwriter;
 
-    private String beditip;
-    private String beditdate;
-    private String bediter;
+    private String eeditip;
+    private String eeditdate;
+    private String eediter;
 
 
 }

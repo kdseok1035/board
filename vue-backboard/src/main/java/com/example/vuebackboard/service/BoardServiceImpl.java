@@ -58,5 +58,10 @@ public class BoardServiceImpl implements BoardService {
         return dao.selectBoard(vo);
     }
 
+    @Override
+    public void boardEditInfo(BoardDTO dto) {
+        dao.boardEditInfo(dto);
+    }
+
 
 }

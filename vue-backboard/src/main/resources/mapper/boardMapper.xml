@@ -5,24 +5,56 @@
 <mapper namespace="com.example.vuebackboard.dao.BoardDAO">
 
     <select id="boardContent" resultType="bdto">
-        SELECT *
+        SELECT bseq
+             , btitle
+             , bcontent
+             , bauthor
+             , bdate
+             , bpw
         FROM tblboard
         WHERE bseq = #{bseq}
     </select>
 
     <insert id="boardWrite">
-        insert into tblboard(bseq, btitle, bcontent, bauthor, bdate, bpw, bwriter, bwriteip, bwritedate)
-        values (bseq.nextval, #{btitle}, #{bcontent}, #{bauthor}, default, #{bpw}, #{bwriter}, #{bwriteip}, default)
+        insert into tblboard( bseq
+                            , btitle
+                            , bcontent
+                            , bauthor
+                            , bdate
+                            , bpw
+                            , bwriter
+                            , bwriteip
+                            , bwritedate)
+        values ( bseq.nextval
+               , #{btitle}
+               , #{bcontent}
+               , #{bauthor}
+               , default
+               , #{bpw}
+               , #{bwriter}
+               , #{bwriteip}
+               , default)
+    </insert>
+
+    <insert id="boardEditInfo">
+        insert into tblEdit( eseq
+                           , eeditip
+                           , eeditdate
+                           , eediter
+                           , bseq)
+        values ( eseq.nextval
+               , #{eeditip}
+               , default
+               , #{eediter}
+               , #{bseq})
+
     </insert>
 
     <update id="boardEdit">
         update tblboard
         set btitle=#{btitle},
             bcontent = #{bcontent},
-            bauthor=#{bauthor},
-            bediter=#{bauthor},
-            beditip=#{beditip},
-            beditdate=sysdate
+            bauthor=#{bauthor}
         where bseq = #{bseq}
     </update>
 
@@ -42,7 +74,10 @@
     <select id="selectBoard" resultType="bdto">
         SELECT *
         FROM (SELECT ROWNUM RN, A.*
-              FROM (SELECT *
+              FROM (SELECT btitle,
+                           bseq,
+                           bdate,
+                           bauthor
                     FROM tblBOARD
                     ORDER BY bSEQ DESC) A)
         WHERE RN BETWEEN #{start} AND #{end}
