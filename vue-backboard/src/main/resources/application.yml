@@ -1,13 +1,15 @@
 server:
     port: 8082
+    servlet:
+      context-path: /
 spring:
   devtools:
     livereload:
       enabled: true
   datasource:    
-    jdbc-url: jdbc:oracle:thin:@localhost:1521:XE
-    username: scott
-    password: tiger
+    jdbc-url: jdbc:oracle:thin:@125.133.65.170:1521:XE
+    username: c##windy
+    password: dkiQWE123
     driver-class-name: oracle.jdbc.OracleDriver
   jpa:
     open-in-view: false

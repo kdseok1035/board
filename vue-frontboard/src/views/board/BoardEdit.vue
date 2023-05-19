@@ -27,6 +27,4 @@
 </template>
 
 <script src="../../assets/js/BoardEdit.js"/>
-<style scoped>
-@import "../../assets/css/BoardEdit.css";
-</style>
+<style scoped src="../../assets/css/BoardEdit.css"/>

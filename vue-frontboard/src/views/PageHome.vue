@@ -12,12 +12,18 @@
             </thead>
             <tbody>
             <tr v-for="list in blist" :key="list.bseq">
-                <td>{{ list.bseq }}</td>
-                <td>
-                    <router-link :to="`/boardContent?bseq=${list.bseq}`">{{ list.btitle }}</router-link>
+                <td id="seq">{{ list.bseq }}</td>
+                <td id="title">
+                    <div @click="$router.push(`/boardContent?bseq=${list.bseq}`)"
+                         style="cursor:pointer;">
+                        <router-link :to="`/boardContent?bseq=${list.bseq}`" v-if="list.btitle.length>30">{{ list.btitle.slice(0,30)+"..." }}</router-link>
+                        <router-link :to="`/boardContent?bseq=${list.bseq}`" v-if="list.btitle.length<=30">{{ list.btitle }}</router-link>
+
+
+                    </div>
                 </td>
-                <td>{{ list.bdate }}</td>
-                <td>{{ list.bauthor }}</td>
+                <td id="date">{{ list.bdate }}</td>
+                <td id="author">{{ list.bauthor }}</td>
             </tr>
             </tbody>
         </table>
@@ -38,6 +44,5 @@
 
 <script src="../assets/js/PageHome.js">
 </script>
-<style scoped>
-@import "../assets/css/PageHome.css";
-</style>
+<style scoped src="../assets/css/PageHome.css"/>
+

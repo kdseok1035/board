@@ -21,26 +21,17 @@ export default {
         }
     },
     created() {
-        const nowPage = this.$route.query.nowPage;
-        if (nowPage == null) {
-            axios.get('http://localhost:8082/') // 백엔드 API 엔드포인트에 맞게 수정
-                .then(response => {
-                    this.blist = response.data.viewAll;
-                    this.plist = response.data.paging;
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        } else {
-            axios.get(`http://localhost:8082/?nowPage=${nowPage}`) // 백엔드 API 엔드포인트에 맞게 수정
-                .then(response => {
-                    this.blist = response.data.viewAll;
-                    this.plist = response.data.paging;
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        }
+        let nowPage = this.$route.query.nowPage;
+        if(nowPage==null){nowPage=1;}
+        axios.get(`http://localhost:8082/?nowPage=${nowPage}`) // 백엔드 API 엔드포인트에 맞게 수정
+            .then(response => {
+                this.blist = response.data.viewAll;
+                this.plist = response.data.paging;
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
     },
     methods: {
         nextPage() {
@@ -64,17 +55,5 @@ export default {
             //지도 객체는 반응형 관리 대상이 아니므로 initMap에서 선언합니다.
             this.map = new kakao.maps.Map(container, options);
         }
-        // fetchData(page) {
-        //   axios.get(`http://localhost:8082/?nowPage=${page}`)
-
-        //     .then(response => {
-        //       this.blist = response.data.viewAll;
-        //       this.plist = response.data.paging;
-        //       location.href=`/?nowPage=${page}`
-        //     })
-        //     .catch(error => {
-        //       console.error(error);
-        //     });
-        // }
     }
 };

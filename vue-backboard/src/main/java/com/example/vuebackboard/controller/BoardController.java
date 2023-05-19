@@ -3,23 +3,21 @@ package com.example.vuebackboard.controller;
 import com.example.vuebackboard.service.BoardService;
 import com.example.vuebackboard.util.PagingVO;
 import com.example.vuebackboard.util.Model;
-import jakarta.servlet.http.HttpServletRequest;
+// import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.vuebackboard.dto.BoardDTO;
 import com.example.vuebackboard.util.Utils;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class BoardController {
 
     @Autowired
     BoardService service;
+
 
     @CrossOrigin(origins = "*")
     @GetMapping("/")
@@ -40,7 +38,7 @@ public class BoardController {
 
     @CrossOrigin(origins = "*")
     @PostMapping("/boardWrite")
-    public void boardWrite(@RequestBody BoardDTO dto,HttpServletRequest req) {
+    public void boardWrite(@RequestBody BoardDTO dto, HttpServletRequest req) {
         dto.setBwriter(dto.getBauthor());
         dto.setBwriteip(Utils.getIp(req));
         service.boardWrite(dto);
@@ -61,6 +59,5 @@ public class BoardController {
         service.boardEdit(dto);
         service.boardEditInfo(dto);
     }
-
 
 }

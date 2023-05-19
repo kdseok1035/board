@@ -33,6 +33,4 @@
 </template>
 
 <script src="../../assets/js/BoardContent.js"/>
-<style scoped>
-@import "../../assets/css/BoardContent.css";
-</style>
+<style scoped src="../../assets/css/BoardContent.css"/>
