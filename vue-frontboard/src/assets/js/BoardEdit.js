@@ -15,7 +15,7 @@ export default {
     created() {
         const bseq = this.$route.query.bseq; // 라우터의 쿼리 파라미터에서 bseq 값을 받아옴
 
-        axios.get(`http://localhost:8082/boardContent?bseq=${bseq}`)
+        axios.get(`http://125.133.65.171:8080/boardContent?bseq=${bseq}`)
             .then(response => {
                 this.bseq = response.data.bseq;
                 this.btitle = response.data.btitle;
@@ -42,7 +42,7 @@ export default {
 
 
                 //INSERT
-                this.$axios.post(`http://localhost:8082/boardEdit?bseq=${this.bseq}`, this.form)
+                this.$axios.post(`http://125.133.65.171:8080/boardEdit?bseq=${this.bseq}`, this.form)
                     .then(() => {
                         alert('글이 수정되었습니다.')
                         location.href = `/boardContent?bseq=${this.bseq}`

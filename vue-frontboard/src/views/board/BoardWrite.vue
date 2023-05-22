@@ -23,9 +23,7 @@
             </tr>
             </tbody>
         </table>
-        <div id="map">
-            <input type="button" value="지도 추가하기" v-on:click="displayMap()">
-        </div>
+
         <div class="button-save" align="right">
             <input type="button" value="작성" v-on:click="fnSave()">
         </div>

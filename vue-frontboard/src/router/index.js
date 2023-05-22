@@ -3,25 +3,25 @@ import PageHome from '@/views/PageHome.vue'
 
 const routes = [
     {
-        path: '/board/',
+        path: '/',
         name: 'PageHome',
         component: PageHome
     }
     ,
     {
-        path: '/board/boardContent',
+        path: '/boardContent',
         name: 'Content',
         component: () => import( '../views/board/BoardContent.vue')
     }
     ,
     {
-        path: '/board/boardWrite',
+        path: '/boardWrite',
         name: 'Write',
         component: () => import( '../views/board/BoardWrite.vue')
     }
     ,
     {
-        path: '/board/boardEdit',
+        path: '/boardEdit',
         name: 'Edit',
         component: () => import( '../views/board/BoardEdit.vue')
     }
