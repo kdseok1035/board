@@ -1,5 +1,8 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import PageHome from '@/views/PageHome.vue'
+import Content from '@/views/board/BoardContent.vue'
+import Write from '@/views/board/BoardWrite.vue'
+import Edit from '@/views/board/BoardEdit.vue'
 
 const routes = [
     {
@@ -11,19 +14,19 @@ const routes = [
     {
         path: '/boardContent',
         name: 'Content',
-        component: () => import( '../views/board/BoardContent.vue')
+        component: Content
     }
     ,
     {
         path: '/boardWrite',
         name: 'Write',
-        component: () => import( '../views/board/BoardWrite.vue')
+        component: Write
     }
     ,
     {
         path: '/boardEdit',
         name: 'Edit',
-        component: () => import( '../views/board/BoardEdit.vue')
+        component: Edit
     }
 ]
 

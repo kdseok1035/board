@@ -35,7 +35,7 @@ dependencies {
 }
 
 bootWar {
-	archiveFileName = 'board.war'
+	archiveFileName = 'board2.war'
 }
 
 //tasks.named('test') {

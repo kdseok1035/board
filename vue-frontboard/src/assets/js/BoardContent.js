@@ -15,7 +15,7 @@ export default {
     created() {
         const bseq = this.$route.query.bseq; // 라우터의 쿼리 파라미터에서 bseq 값을 받아옴
 
-        axios.get(`http://125.133.65.171:8080/boardContent?bseq=${bseq}`)
+        axios.get(`http://125.133.65.171:8080/board2/boardContent?bseq=${bseq}`)
             .then(response => {
                 this.bseq = response.data.bseq;
                 this.btitle = response.data.btitle;
@@ -40,11 +40,11 @@ export default {
             if (pw === bpw) {
 
                 //INSERT
-                this.$axios.post(`http://125.133.65.171:8080/boardDelete?bseq=${bseq}`, bseq)
+                this.$axios.post(`http://125.133.65.171:8080/board2/boardDelete?bseq=${bseq}`, bseq)
                     .then(() => {
 
                         alert('글이 삭제되었습니다.')
-                        location.href = '/'
+                        location.href = '/dist/'
                     }).catch((err) => {
                     if (err.message.indexOf('Network Error') > -1) {
                         alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')

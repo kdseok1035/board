@@ -31,6 +31,9 @@
         </div>
     </div>
     <div class="btn-cover">
+        <button :disabled="plist.nowPage == 1" @click="firstPage">
+            처음으로
+        </button>
         <button :disabled="plist.nowPage == 1" @click="prevPage">
             이전
         </button>
@@ -38,6 +41,10 @@
         <button :disabled="plist.nowPage == plist.lastPage" @click="nextPage">
             다음
         </button>
+        <button :disabled="plist.nowPage == plist.lastPage" @click="lastPage">
+            끝으로
+        </button>
+
     </div>
 </template>
 

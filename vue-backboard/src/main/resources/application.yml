@@ -2,7 +2,12 @@ server:
     port: 8080
     servlet:
       context-path: /
+
 spring:
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      suffix: .html
   devtools:
     livereload:
       enabled: true
