@@ -83,4 +83,16 @@
         WHERE RN BETWEEN #{start} AND #{end}
     </select>
 
+    <select id="editCheck" resultType="int">
+        select count(*)
+        from tbledit
+        where bseq = #{bseq}
+    </select>
+
+    <delete id="editDelete">
+        delete
+        from tbledit
+        where bseq = #{bseq}
+    </delete>
+
 </mapper>

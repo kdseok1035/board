@@ -9,7 +9,7 @@
 <script>
 
 
-export default{
+export default {
 
     methods: {
         mainPage() {
@@ -21,7 +21,8 @@ export default{
 </script>
 
 <style scoped>
-h1{
+h1 {
     cursor: pointer;
+    width: fit-content;
 }
 </style>

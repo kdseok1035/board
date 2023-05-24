@@ -63,5 +63,15 @@ public class BoardServiceImpl implements BoardService {
         dao.boardEditInfo(dto);
     }
 
+    @Override
+    public int editCheck(Long bseq) {
+        return dao.editCheck(bseq);
+    }
+
+    @Override
+    public void editDelete(Long bseq) {
+        dao.editDelete(bseq);
+    }
+
 
 }

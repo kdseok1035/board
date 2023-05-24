@@ -21,4 +21,8 @@ public interface BoardService {
 
 
     void boardEditInfo(BoardDTO dto);
+
+    int editCheck(Long bseq);
+
+    void editDelete(Long bseq);
 }

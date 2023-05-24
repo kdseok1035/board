@@ -33,12 +33,15 @@ public class BoardController {
     @CrossOrigin(origins = "*")
     @GetMapping("/boardContent")
     public BoardDTO boardContent(@RequestParam(name = "bseq") Long bseq) {
-        return service.boardContent(bseq);
+        BoardDTO bdto = service.boardContent(bseq);
+        //bdto.setBcontent(bdto.getBcontent().replaceAll("''", "'"));
+        return bdto;
     }
 
     @CrossOrigin(origins = "*")
     @PostMapping("/boardWrite")
     public void boardWrite(@RequestBody BoardDTO dto, HttpServletRequest req) {
+        //dto.setBcontent(dto.getBcontent().replaceAll("'", "''"));
         dto.setBwriter(dto.getBauthor());
         dto.setBwriteip(Utils.getIp(req));
         service.boardWrite(dto);
@@ -47,6 +50,10 @@ public class BoardController {
     @CrossOrigin(origins = "*")
     @PostMapping("/boardDelete")
     public void boardDelete(@RequestParam(name = "bseq") Long bseq) {
+        int count = service.editCheck(bseq);
+        if (count >= 1) {
+            service.editDelete(bseq);
+        }
         service.boardDelete(bseq);
     }
 

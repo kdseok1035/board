@@ -48,7 +48,6 @@
     </div>
 </template>
 
-<script src="../assets/js/PageHome.js">
-</script>
+<script src="../assets/js/PageHome.js"/>
 <style scoped src="../assets/css/PageHome.css"/>
 
