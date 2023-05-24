@@ -6,7 +6,7 @@
             <tr>
                 <th>제목</th>
                 <td colspan="3" id="title" class="data" align="center"><input type="text" v-model="btitle" name="btitle"
-                                                                              id="btitle" required>></td>
+                                                                              id="btitle" required></td>
             </tr>
             <tr>
                 <th>내용</th>
@@ -17,9 +17,9 @@
             <tr>
                 <th>작성자</th>
                 <td id="author" class="data" align="center"><input type="text" v-model="bauthor" name="bauthor"
-                                                                   id="bauthor">></td>
+                                                                   id="bauthor"></td>
                 <th>비밀번호</th>
-                <td id="pw" class="data" align="center"><input type="password" v-model="bpw" name="bpw" id="bpw" required>></td>
+                <td id="pw" class="data" align="center"><input type="password" v-model="bpw" name="bpw" id="bpw" required></td>
             </tr>
             </tbody>
         </table>

@@ -7,10 +7,22 @@
 #content th,
 #content td {
     border: 1px solid black;
+    font-size: 1.2rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #content th {
     width: 10%;
+    background-color:#bbbbbb;
+}
+
+#content td{
+    padding:10px;
+}
+
+#content .bauthor, .bdate{
+    text-align:center;
 }
 
 .buttons {
@@ -18,4 +30,9 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.buttons button, input{
+    font-size: 1.2rem;
 }

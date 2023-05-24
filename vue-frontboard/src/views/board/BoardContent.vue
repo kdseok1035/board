@@ -19,9 +19,9 @@
             </tr>
             <tr>
                 <th>작성자</th>
-                <td>{{ bauthor }}</td>
+                <td class="bauthor">{{ bauthor }}</td>
                 <th>날짜</th>
-                <td>{{ bdate }}</td>
+                <td class="bdate">{{ bdate }}</td>
             </tr>
             </tbody>
         </table>

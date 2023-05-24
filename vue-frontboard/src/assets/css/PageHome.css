@@ -1,7 +1,7 @@
 #list {
     margin: 0 auto;
     border-collapse: collapse;
-    width: 50%
+    width: 60%
 }
 
 #list th,
@@ -9,6 +9,15 @@
     border: 1px solid black;
     text-align: center;
     overflow: hidden;
+    font-size: 1.2rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#list th{
+    background-color: #bbbbbb;
+}
+#list tbody tr:hover{
+    background-color:#dddddd;
 }
 
 #seq{
@@ -31,30 +40,29 @@
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    font-size: 1.2rem;
 }
 
 .btn-cover button {
     margin: 10px;
+    font-size: 1.2rem;
 }
 
 .write-button {
-    width: 50%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    font-size: 1.2rem;
 
-}
-#map {
-    margin: 10px auto;
-    width: 50%;
-    height: 500px;
-    border: 1px solid black;
 }
 
 .button-group {
     margin: 10px 0;
+    font-size: 1.2rem;
 }
 
 button {
     margin: 0 3px;
+    font-size: 1.2rem;
 }
