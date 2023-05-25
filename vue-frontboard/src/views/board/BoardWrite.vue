@@ -9,10 +9,10 @@
                                                                               id="btitle" required></td>
             </tr>
             <tr>
-                <th>내용</th>
+                <th>내용<br/>{{this.bcontent.length}}/5000자</th>
                 <td colspan="3" id="content" class="data" align="center"><textarea v-model="bcontent" name="bcontent"
                                                                                    id="bcontent" cols="30"
-                                                                                   rows="10" required></textarea></td>
+                                                                                   rows="10" v-on:keyup="fnCount()" required></textarea><input type="file"/></td>
             </tr>
             <tr>
                 <th>작성자</th>

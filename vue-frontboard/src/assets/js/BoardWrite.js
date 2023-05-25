@@ -8,6 +8,13 @@ export default {
         }
     },
     methods: {
+        fnCount(){
+            if(this.bcontent.length>5000){
+                this.bcontent=this.bcontent.slice(0,5000);
+                alert("5000자 이상 입력할 수 없습니다.");
+            }
+
+        },
         fnSave() {
             this.form = {
                 "btitle": this.btitle,
@@ -17,19 +24,14 @@ export default {
             }
             if (this.btitle.length > 30) {
                 alert("제목은 30글자 이내로 작성되어야합니다.");
-                location.href = '/dist/boardWrite';
-            } else if (this.bcontent == null) {
+            } else if (this.bcontent.length === 0) {
                 alert("내용은 반드시 작성해야합니다.")
-                location.href = '/dist/boardWrite'
-            } else if (this.bpw == null) {
+            } else if (this.bpw.length === 0) {
                 alert("비밀번호는 반드시 작성해야합니다.")
-                location.href = '/dist/boardWrite'
             } else if (this.bpw.length > 4) {
                 alert("비밀번호는 4글자 이내로 작성해야합니다.")
-                location.href = '/dist/boardWrite'
-            }  else if (this.bauthor.length > 4) {
+            } else if (this.bauthor.length > 4) {
                 alert("작성자 이름은 4글자 이내로 작성해야합니다.")
-                location.href = '/dist/boardWrite'
             } else {
                 //INSERT
                 this.$axios.post("http://125.133.65.171:8080/board2/boardWrite", this.form)

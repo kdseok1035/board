@@ -1,7 +1,7 @@
 #content {
     margin: 0 auto;
     border-collapse: collapse;
-    width: 60%
+    width: 60%;
 }
 
 #content th,
@@ -14,15 +14,21 @@
 
 #content th {
     width: 10%;
-    background-color:#bbbbbb;
+    background-color: #bbbbbb;
 }
 
-#content td{
-    padding:10px;
+#content td {
+    padding: 10px;
 }
 
-#content .bauthor, .bdate{
-    text-align:center;
+#content .bauthor, .bdate {
+    text-align: center;
+}
+
+#content .bcontent {
+    width: 90%;
+    height: auto;
+    word-break: break-all;
 }
 
 .buttons {
@@ -33,6 +39,6 @@
     font-size: 1.2rem;
 }
 
-.buttons button, input{
+.buttons button, input {
     font-size: 1.2rem;
 }

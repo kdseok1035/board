@@ -30,7 +30,13 @@ export default {
             });
     },
     methods: {
+        fnCount() {
+            if (this.bcontent.length > 5000) {
+                this.bcontent = this.bcontent.slice(0, 5000);
+                alert("5000자 이상 입력할 수 없습니다.");
+            }
 
+        },
         fnEdit() {
             let bseq = this.bseq;
             if (this.bpwcheck === this.bpw) {
@@ -47,11 +53,10 @@ export default {
                 } else if (this.bcontent == null) {
                     alert("내용은 반드시 작성해야합니다.");
                     location.href = `/dist/boardEdit?bseq=${this.bseq}`;
-                } else if ( this.bauthor.length>4 ){
+                } else if (this.bauthor.length > 4) {
                     alert("작성자 이름은 4글자 이내로 작성해야합니다.");
                     location.href = `/dist/boardEdit?bseq=${this.bseq}`;
-                }
-                else {
+                } else {
                     //INSERT
                     this.$axios.post(`http://125.133.65.171:8080/board2/boardEdit?bseq=${this.bseq}`, this.form)
                         .then(() => {

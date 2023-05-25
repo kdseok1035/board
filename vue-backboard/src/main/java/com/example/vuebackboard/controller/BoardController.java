@@ -33,9 +33,8 @@ public class BoardController {
     @CrossOrigin(origins = "*")
     @GetMapping("/boardContent")
     public BoardDTO boardContent(@RequestParam(name = "bseq") Long bseq) {
-        BoardDTO bdto = service.boardContent(bseq);
         //bdto.setBcontent(bdto.getBcontent().replaceAll("''", "'"));
-        return bdto;
+        return service.boardContent(bseq);
     }
 
     @CrossOrigin(origins = "*")

@@ -15,8 +15,8 @@
                 <td id="title">
                     <div @click="$router.push(`/boardContent?bseq=${list.bseq}`)"
                          style="cursor:pointer;">
-                        <router-link :to="`/boardContent?bseq=${list.bseq}`" v-if="list.btitle.length>30">{{ list.btitle.slice(0,30)+"..." }}</router-link>
-                        <router-link :to="`/boardContent?bseq=${list.bseq}`" v-if="list.btitle.length<=30">{{ list.btitle }}</router-link>
+                        <span v-if="list.btitle.length>30">{{ list.btitle.slice(0,30)+"..." }}</span>
+                        <span v-else>{{ list.btitle }}</span>
 
 
                     </div>

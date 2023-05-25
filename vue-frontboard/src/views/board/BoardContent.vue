@@ -8,7 +8,7 @@
             </tr>
             <tr>
                 <th>내용</th>
-                <td colspan="3">
+                <td colspan="3" class="bcontent">
                     <div v-if="bcontent.indexOf('<script')===-1">
                         <div v-html="bcontent"/>
                     </div>

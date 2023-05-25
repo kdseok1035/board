@@ -22,6 +22,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     width: 90%;
+    font-size: 1.2rem;
 }
 
 #bcontent {
@@ -30,25 +31,32 @@
     width: 90%;
     height: 300px;
     resize: none;
+    font-size: 1.2rem;
 }
 
 #bauthor {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 90%;
+    font-size: 1.2rem;
 }
 
 #bpw {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 90%;
+    font-size: 1.2rem;
 }
 
-.button {
+.button{
     width: 60%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+}
+
+.button input{
+    margin: 0 3px;
     font-size: 1.2rem;
 
 }

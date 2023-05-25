@@ -8,9 +8,9 @@
                 <td colspan="3"><input v-model="btitle" type="text" name="btitle" id="btitle" required></td>
             </tr>
             <tr>
-                <th>내용</th>
+                <th>내용<br/>{{ this.bcontent.length }}/5000자</th>
                 <td colspan="3"><textarea v-model="bcontent" name="bcontent" id="bcontent" cols="30"
-                                          rows="10" required></textarea></td>
+                                          rows="10" v-on:keyup="fnCount()" required></textarea></td>
             </tr>
             <tr>
                 <th>작성자</th>
